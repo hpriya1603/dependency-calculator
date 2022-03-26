@@ -1,0 +1,39 @@
+plugins {
+    id 'application'
+}
+
+apply plugin: "java"
+apply plugin: "application"
+
+ext {
+    javaMainClass = "com.project.report.GenerateReport"
+}
+
+application{
+    mainClassName = javaMainClass
+}
+
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+}
+
+if (project.hasProperty("args")) {
+    ext.cmdargs = project.getProperty("args")
+} else {
+    ext.cmdargs = ""
+}
+task runReport(type: JavaExec) {
+    group = "Execution"
+    description = "Run the main class with JavaExecTask"
+    classpath = sourceSets.main.runtimeClasspath
+    main = javaMainClass
+    args cmdargs
+}
