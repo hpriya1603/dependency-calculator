@@ -6,7 +6,7 @@ apply plugin: "java"
 apply plugin: "application"
 
 ext {
-    javaMainClass = "com.project.report.GenerateReport"
+    javaMainClass = "com.dependency.calculator.Main"
 }
 
 application{
@@ -30,7 +30,7 @@ if (project.hasProperty("args")) {
 } else {
     ext.cmdargs = ""
 }
-task runReport(type: JavaExec) {
+task runCalc(type: JavaExec) {
     group = "Execution"
     description = "Run the main class with JavaExecTask"
     classpath = sourceSets.main.runtimeClasspath
