@@ -23,7 +23,7 @@ F H
   During the DFS traversal, after all neighbors of a vertex u are visited, we then put it to the front of the result list.
 - This algorithm is similar to the standard DFS algorithm. Although it starts with a random vertex, it doesn’t put the vertex into the list immediately once it visits it.
   Instead, it first visits all its neighbors recursively and then put the vertex to the front of the list. 
-  Therefore, if G contains an edge (u, v), then u appears before v in the list.
+  Therefore, if G contains an edge (u, v), then u appears before v in the list (but the output doesnt appear edge wise - refer assumption no.3).
 - The overall running time is also O(V+E), as it has the same time complexity as the DFS algorithm.
 - This list is mapped to a HashMap for easier printing.     
 
@@ -31,6 +31,8 @@ F H
 
 - The input is of type String.
 - The input is a single multi-line String.
+- Although topological sorting algorithm is used, the final output is sorted conventionally(alphabetically),
+  so that the output is in accordance with the expected output mentioned in the problem statement.
 
 ### Specifications 
 
