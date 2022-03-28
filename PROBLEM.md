@@ -31,9 +31,3 @@ D A B C E F G H
 E F H
 F H
 ```
-
-Optional extra
------------------
-
-Extend your program so that it can also be used to calculate inverse dependencies
-(ie, determine the set of items that depend on each item)
